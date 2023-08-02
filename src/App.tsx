@@ -1,6 +1,5 @@
 import { ReactElement, useState } from "react";
 import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App(): ReactElement {
@@ -10,6 +9,10 @@ function App(): ReactElement {
 		<>
 			<div className="editor-container">
 				<textarea id="editor"></textarea>
+			</div>
+			
+			<div className="preview-container">
+				<div id="preview"></div>
 			</div>
 		</>
 	);
