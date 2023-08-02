@@ -33,9 +33,29 @@ module.exports = {
 			"always"
 		],
 		"no-unused-vars": "off",
+		"space-before-function-paren": ["error", "never"],
+		"object-curly-spacing": ["error", "always"],
+
+		// React
 		"react-refresh/only-export-components": [
 			"warn",
 			{ "allowConstantExport": true },
 		],
+
+		// typescript-eslint
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{ "argsIgnorePattern": "^unused|_", "varsIgnorePattern": "^unused|_" }
+		],
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/naming-convention": [
+			"error",
+			{
+				"selector": "variable",
+				"format": ["snake_case", "UPPER_CASE"]
+			}
+		],
+		"@typescript-eslint/explicit-function-return-type": "error",
+
 	},
 };
