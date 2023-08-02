@@ -1,4 +1,15 @@
-# React + TypeScript + Vite
+# Markdown Previewer
+
+A certification project from [freeCodeCamp.org][1]
+
+[Edit on StackBlitz ⚡️][2]
+
+[1]: https://www.freecodecamp.org
+[2]: https://stackblitz.com/edit/vitejs-vite-vsndta
+
+---
+
+# Template information
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
