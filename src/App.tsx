@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import { mangle } from "marked-mangle";
 import { gfmHeadingId } from "marked-gfm-heading-id";
 import { marked, type MarkedExtension } from "marked";
@@ -7,7 +8,6 @@ import {
 	type ChangeEvent,
 	type ReactElement
 } from "react";
-
 
 import "./App.css";
 import reactLogo from "./assets/react.svg";
