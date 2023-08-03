@@ -14,6 +14,7 @@ import reactLogo from "./assets/react.svg";
 
 marked.use(mangle() as MarkedExtension);
 marked.use(gfmHeadingId() as MarkedExtension);
+marked.setOptions({ "breaks": true });
 
 const DEFAULT_CONTENT_VALUE = `
 # Welcome to Markdown Previewer!
