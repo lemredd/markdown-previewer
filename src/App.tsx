@@ -17,7 +17,7 @@ marked.use(gfmHeadingId() as MarkedExtension);
 
 const DEFAULT_CONTENT_VALUE = `
 # Welcome to Markdown Previewer!
-## Created by [Lem Redd](https://www.github.com/lemredd)
+## Another required heading
 
 Try editing the editor to see the **magic** happen!
 Here are some sample markdown elements you can use:
@@ -40,6 +40,8 @@ Here are some sample markdown elements you can use:
 
 ### Image
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
+
+Created with 💓 by [Lem Redd](https://www.github.com/lemredd)
 `;
 
 function App(): ReactElement {
