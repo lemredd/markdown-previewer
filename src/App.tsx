@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import DOMPurify from "dompurify";
+import { mangle } from "marked-mangle";
+import { gfmHeadingId } from "marked-gfm-heading-id";
+import { marked, type MarkedExtension } from "marked";
+import {
+	useEffect, useRef, useState,
 
-function App() {
-  const [count, setCount] = useState(0)
+	type ChangeEvent,
+	type ReactElement
+} from "react";
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+import "./App.css";
+import reactLogo from "./assets/react.svg";
+
+marked.use(mangle() as MarkedExtension);
+marked.use(gfmHeadingId() as MarkedExtension);
+marked.setOptions({ "breaks": true });
+
+const DEFAULT_CONTENT_VALUE = `
+# Welcome to Markdown Previewer!
+## Another required heading
+
+Try editing the editor to see the **magic** happen!
+Here are some sample markdown elements you can use:
+
+### Inline code
+\`code\`
+
+### Code block
+\`\`\`javascript
+	const msg = "Hello Javascript!";
+\`\`\`
+
+### List items
+- Item #1
+- Item #2
+- Item #3
+
+### Blockquotes
+> "I code, therefore I am." - Rene DesCodes
+
+### Image
+![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
+
+Created with 💓 by [Lem Redd](https://www.github.com/lemredd)
+`;
+
+function App(): ReactElement {
+	const [content, set_content] = useState<string>(DEFAULT_CONTENT_VALUE);
+	const handle_change = (event: ChangeEvent<HTMLTextAreaElement>): void => set_content(event.target.value);
+	const preview = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		if (preview.current) preview.current.innerHTML = DOMPurify.sanitize(marked.parse(content));
+	}, [content]);
+
+	return (
+		<>
+			<div className="editor-container">
+				<textarea value={content} id="editor" onChange={handle_change}></textarea>
+			</div>
+			
+			<div className="preview-container">
+				<div id="preview" ref={preview}></div>
+			</div>
+		</>
+	);
 }
 
-export default App
+export default App;
