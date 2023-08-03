@@ -2,7 +2,7 @@ import { mangle } from "marked-mangle";
 import { gfmHeadingId } from "marked-gfm-heading-id";
 import { marked, type MarkedExtension } from "marked";
 import {
-	useState,
+	useRef, useState,
 
 	type ChangeEvent,
 	type ReactElement
@@ -17,8 +17,8 @@ marked.use(gfmHeadingId() as MarkedExtension);
 
 function App(): ReactElement {
 	const [content, set_content] = useState<string>("");
-
 	const handle_change = (event: ChangeEvent<HTMLTextAreaElement>): void => set_content(event.target.value);
+	const preview = useRef<HTMLDivElement>(null);
 
 	return (
 		<>
@@ -27,7 +27,7 @@ function App(): ReactElement {
 			</div>
 			
 			<div className="preview-container">
-				<div id="preview">{content}</div>
+				<div id="preview" ref={preview}></div>
 			</div>
 		</>
 	);
