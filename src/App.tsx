@@ -1,14 +1,21 @@
-import { ReactElement, useState } from "react";
+import {
+	useState,
+
+	type ChangeEvent,
+	type ReactElement
+} from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
 function App(): ReactElement {
-	const [count, set_count] = useState(0);
+	const [content, set_content] = useState<string>("");
+
+	const handle_change = (event: ChangeEvent<HTMLTextAreaElement>): void => set_content(event.target.value);
 
 	return (
 		<>
 			<div className="editor-container">
-				<textarea id="editor"></textarea>
+				<textarea value={content} id="editor" onChange={handle_change}></textarea>
 			</div>
 			
 			<div className="preview-container">
