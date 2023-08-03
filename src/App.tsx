@@ -1,11 +1,19 @@
+import { mangle } from "marked-mangle";
+import { gfmHeadingId } from "marked-gfm-heading-id";
+import { marked, type MarkedExtension } from "marked";
 import {
 	useState,
 
 	type ChangeEvent,
 	type ReactElement
 } from "react";
-import reactLogo from "./assets/react.svg";
+
+
 import "./App.css";
+import reactLogo from "./assets/react.svg";
+
+marked.use(mangle() as MarkedExtension);
+marked.use(gfmHeadingId() as MarkedExtension);
 
 function App(): ReactElement {
 	const [content, set_content] = useState<string>("");
