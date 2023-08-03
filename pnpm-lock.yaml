@@ -8,6 +8,12 @@ dependencies:
   marked:
     specifier: ^6.0.0
     version: 6.0.0
+  marked-gfm-heading-id:
+    specifier: ^3.0.4
+    version: 3.0.4(marked@6.0.0)
+  marked-mangle:
+    specifier: ^1.1.0
+    version: 1.1.0(marked@6.0.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1211,6 +1217,10 @@ packages:
       get-intrinsic: 1.2.1
     dev: true
 
+  /github-slugger@2.0.0:
+    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
+    dev: false
+
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -1531,6 +1541,23 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
+
+  /marked-gfm-heading-id@3.0.4(marked@6.0.0):
+    resolution: {integrity: sha512-k22f+k8B449kRVXbi3OYxahI6t8HywKIF0wn0L0atzYhFHYRcJynLDekh+lcxcZkNnkEGRZOHuRfTcpjMjLqDw==}
+    peerDependencies:
+      marked: ^4 || ^5
+    dependencies:
+      github-slugger: 2.0.0
+      marked: 6.0.0
+    dev: false
+
+  /marked-mangle@1.1.0(marked@6.0.0):
+    resolution: {integrity: sha512-ed2W2gMB2HIBaYasBZveMFJfDRTL2OFycr0GgUSPcBSNl5dX+1r6lHG6u1eFXw7kej2hBTWa1m6YZqcfn4Coxw==}
+    peerDependencies:
+      marked: ^4 || ^5
+    dependencies:
+      marked: 6.0.0
+    dev: false
 
   /marked@6.0.0:
     resolution: {integrity: sha512-7E3m/xIlymrFL5gWswIT4CheIE3fDeh51NV09M4x8iOc7NDYlyERcQMLAIHcSlrvwliwbPQ4OGD+MpPSYiQcqw==}
