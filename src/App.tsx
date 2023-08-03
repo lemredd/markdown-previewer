@@ -19,7 +19,7 @@ function App(): ReactElement {
 			</div>
 			
 			<div className="preview-container">
-				<div id="preview"></div>
+				<div id="preview">{content}</div>
 			</div>
 		</>
 	);
