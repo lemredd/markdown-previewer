@@ -3,7 +3,7 @@ import { mangle } from "marked-mangle";
 import { gfmHeadingId } from "marked-gfm-heading-id";
 import { marked, type MarkedExtension } from "marked";
 import {
-	useRef, useState,
+	useEffect, useRef, useState,
 
 	type ChangeEvent,
 	type ReactElement
@@ -19,6 +19,10 @@ function App(): ReactElement {
 	const [content, set_content] = useState<string>("");
 	const handle_change = (event: ChangeEvent<HTMLTextAreaElement>): void => set_content(event.target.value);
 	const preview = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		if (preview.current) preview.current.innerHTML = DOMPurify.sanitize(marked.parse(content));
+	}, [content]);
 
 	return (
 		<>
