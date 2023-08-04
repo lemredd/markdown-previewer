@@ -1,7 +1,3 @@
-import DOMPurify from "dompurify";
-import { mangle } from "marked-mangle";
-import { gfmHeadingId } from "marked-gfm-heading-id";
-import { marked, type MarkedExtension } from "marked";
 import {
 	useEffect, useRef, useState,
 
@@ -10,13 +6,11 @@ import {
 } from "react";
 
 import Editor from "./components/Editor";
+import Preview from "./components/Preview";
 
 import "./App.css";
 import reactLogo from "./assets/react.svg";
 
-marked.use(mangle() as MarkedExtension);
-marked.use(gfmHeadingId() as MarkedExtension);
-marked.setOptions({ "breaks": true });
 
 const DEFAULT_CONTENT_VALUE = `
 # Welcome to Markdown Previewer!
@@ -59,10 +53,7 @@ function App(): ReactElement {
 	return (
 		<>
 			<Editor content={content} on_change={handle_change} />
-			
-			<div className="preview-container">
-				<div id="preview" ref={preview}></div>
-			</div>
+			<Preview content={content} />
 		</>
 	);
 }
