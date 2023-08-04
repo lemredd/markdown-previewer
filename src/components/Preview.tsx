@@ -14,9 +14,13 @@ interface Props {
 }
 
 export default function Preview({ content }: Props): ReactElement {
+	const sanitized_content = DOMPurify.sanitize(marked.parse(content));
 	return (
 		<div className="preview-container">
-			<div id="preview" dangerouslySetInnerHTML={{ "__html": content }}></div>
+			<div
+				id="preview"
+				dangerouslySetInnerHTML={{ "__html": sanitized_content }}
+			/>
 		</div>
 	);
 }
