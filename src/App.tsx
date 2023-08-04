@@ -1,5 +1,5 @@
 import {
-	useEffect, useRef, useState,
+	useState,
 
 	type ChangeEvent,
 	type ReactElement
@@ -10,7 +10,6 @@ import Preview from "./components/Preview";
 
 import "./App.css";
 import reactLogo from "./assets/react.svg";
-
 
 const DEFAULT_CONTENT_VALUE = `
 # Welcome to Markdown Previewer!
@@ -44,11 +43,6 @@ Created with 💓 by [Lem Redd](https://www.github.com/lemredd)
 function App(): ReactElement {
 	const [content, set_content] = useState<string>(DEFAULT_CONTENT_VALUE);
 	const handle_change = (event: ChangeEvent<HTMLTextAreaElement>): void => set_content(event.target.value);
-	const preview = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		if (preview.current) preview.current.innerHTML = DOMPurify.sanitize(marked.parse(content));
-	}, [content]);
 
 	return (
 		<>
