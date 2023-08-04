@@ -9,6 +9,8 @@ import {
 	type ReactElement
 } from "react";
 
+import Editor from "./components/Editor";
+
 import "./App.css";
 import reactLogo from "./assets/react.svg";
 
@@ -56,9 +58,7 @@ function App(): ReactElement {
 
 	return (
 		<>
-			<div className="editor-container">
-				<textarea value={content} id="editor" onChange={handle_change}></textarea>
-			</div>
+			<Editor content={content} on_change={handle_change} />
 			
 			<div className="preview-container">
 				<div id="preview" ref={preview}></div>
