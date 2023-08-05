@@ -27,6 +27,14 @@ img {
 	max-width: 980px;
 	margin: 0 auto;
 	padding: 45px;
+@media screen and (min-width: 640px) {
+	.editor-container textarea {
+		height: 100%;
+	}
+
+	.container {
+		flex-direction: row;
+	}
 }
 
 @media (max-width: 767px) {
