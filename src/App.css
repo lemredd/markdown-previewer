@@ -8,6 +8,10 @@ img {
 	display: flex;
 	flex-direction: column;
 }
+.container > * {
+	flex: auto;
+}
+
 /* https://github.com/sindresorhus/github-markdown-css#usage */
 .markdown-body {
 	box-sizing: border-box;
