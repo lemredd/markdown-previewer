@@ -3,6 +3,11 @@ img {
 	max-width: inherit;
 }
 
+.container {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
 /* https://github.com/sindresorhus/github-markdown-css#usage */
 .markdown-body {
 	box-sizing: border-box;
