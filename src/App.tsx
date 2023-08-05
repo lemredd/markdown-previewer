@@ -18,10 +18,10 @@ function App(): ReactElement {
 	const handle_change = (event: ChangeEvent<HTMLTextAreaElement>): void => set_content(event.target.value);
 
 	return (
-		<>
+		<div className="container">
 			<Editor content={content} on_change={handle_change} />
 			<Preview content={content} />
-		</>
+		</div>
 	);
 }
 
