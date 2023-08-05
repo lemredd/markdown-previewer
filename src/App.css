@@ -12,6 +12,9 @@ img {
 	flex: auto;
 }
 
+.editor-container {
+	padding-right: 4px;
+}
 /* https://github.com/sindresorhus/github-markdown-css#usage */
 .markdown-body {
 	box-sizing: border-box;
