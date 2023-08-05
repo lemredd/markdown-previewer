@@ -17,6 +17,9 @@ img {
 }
 .editor-container textarea {
 	resize: vertical;
+	width: 100%;
+}
+
 /* https://github.com/sindresorhus/github-markdown-css#usage */
 .markdown-body {
 	box-sizing: border-box;
