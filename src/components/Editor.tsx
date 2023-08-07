@@ -9,6 +9,7 @@ export default function Editor({ content, on_change }: Props): ReactElement {
 	return (
 		<div className="editor-container">
 			<textarea value={content} id="editor" onChange={on_change}></textarea>
+			<button className="toggle-expand-btn material-symbols-outlined">chevron_right</button>
 		</div>
 	);
 }
