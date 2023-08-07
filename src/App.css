@@ -48,6 +48,9 @@ img {
 		height: 100%;
 		border: none;
 	}
+	.editor-container .toggle-expand-btn {
+		display: none;
+	}
 
 	.container {
 		flex-direction: row;
