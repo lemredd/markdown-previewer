@@ -36,7 +36,7 @@ img {
 }
 
 .preview-container {
-	max-height: 100vh;
+	height: 100vh;
 	overflow-y: scroll;
 }
 /* https://github.com/sindresorhus/github-markdown-css#usage */
@@ -52,7 +52,7 @@ img {
 		gap: 1rem;
 	}
 	.editor-container textarea {
-		height: 100%;
+		height: calc(100vh - 4px);
 		border: none;
 	}
 	.editor-container .toggle-expand-btn {
