@@ -17,6 +17,14 @@ img {
 .editor-container {
 	position: relative;
 }
+.editor-container .toggle-expand-btn {
+	position: absolute;
+	right: .5rem;
+	top: .5rem;
+
+	border: none;
+	cursor: pointer;
+}
 .editor-container textarea {
 	resize: none;
 	display: block;
