@@ -21,6 +21,7 @@ img {
 .editor-container {
 	position: relative;
 }
+
 .editor-container .toggle-expand-btn {
 	position: absolute;
 	right: 0;
@@ -28,7 +29,13 @@ img {
 
 	border: none;
 	cursor: pointer;
+
+	transition: transform .15s ease;
 }
+#maximizer:checked + .toggle-expand-btn {
+	transform: rotate(90deg);
+}
+
 .editor-container textarea {
 	resize: none;
 	display: block;
