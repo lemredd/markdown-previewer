@@ -44,6 +44,10 @@ img {
 	width: 100%;
 	height: calc(30vh - 4px);
 }
+#maximizer:checked ~ #editor {
+	position: fixed;
+	top: 0; left: 0;
+	height: calc(100vh + 4px);
 }
 
 .preview-container {
