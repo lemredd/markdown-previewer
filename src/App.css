@@ -91,6 +91,8 @@ header h1 {
 	max-width: 980px;
 	margin: 0 auto;
 	padding: 1rem;
+	
+	background-color: transparent;
 }
 
 @media screen and (min-width: 360px) {
