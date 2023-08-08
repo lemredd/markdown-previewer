@@ -66,9 +66,13 @@ header h1 {
 .editor-container textarea {
 	--BORDER_VALUES: 1px solid #808080;
 	resize: none;
+
+	border: none;
+	border-bottom: var(--BORDER_VALUES);
+
 	display: block;
 	width: 100%;
-	height: calc(30vh - 4px);
+	height: 30vh;
 }
 #maximizer:checked ~ #editor {
 	position: fixed;
