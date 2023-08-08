@@ -20,6 +20,28 @@ img {
 	flex: 1;
 }
 
+header {
+	border-bottom: 1px solid #808080;
+	padding: 1em;
+
+	width: 100%;
+	height: var(--HEADER_HEIGHT);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+header h1 {
+	margin: 0;
+	font-size: 1rem;
+}
+.info {
+	display: none;
+}
+.info img {
+	width: 24px;
+}
+
+
 .editor-container {
 	position: relative;
 }
@@ -65,6 +87,13 @@ img {
 }
 
 @media screen and (min-width: 640px) {
+	header {
+		width: 100%;
+	}
+	header h1 {
+		font-size: 1.25rem;
+	}
+
 	.editor-container {
 		gap: 1rem;
 	}
