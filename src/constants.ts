@@ -3,6 +3,7 @@ export const DEFAULT_CONTENT_VALUE = `
 ## Another required heading
 
 Try editing the editor to see the **magic** happen!
+
 Here are some sample markdown elements you can use:
 
 ### Inline code
@@ -24,7 +25,7 @@ Here are some sample markdown elements you can use:
 ### Image
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 
-Created with 💓 by [Lem Redd](https://www.github.com/lemredd)
+Created by [Lem Redd](https://www.github.com/lemredd)
 `;
 
 

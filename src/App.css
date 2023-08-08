@@ -10,33 +10,79 @@ img {
 }
 
 .container {
+	--HEADER_HEIGHT: 64px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
+	flex-wrap: nowrap;
+	max-height: calc(100vh - 88px);
 }
 .container > div {
 	flex: 1;
 }
 
+header {
+	border-bottom: 1px solid #808080;
+	padding: 1em;
+
+	width: 100%;
+	height: var(--HEADER_HEIGHT);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+header h1 {
+	margin: 0;
+	font-size: 1rem;
+}
+.info {
+	display: none;
+}
+.info img {
+	width: 24px;
+}
+
+
 .editor-container {
 	position: relative;
 }
+
 .editor-container .toggle-expand-btn {
 	position: absolute;
-	right: 0;
+	right: .5rem;
 	top: .5rem;
 
 	border: none;
 	cursor: pointer;
+
+	transition: transform .15s ease;
+	z-index: 999;
 }
+#maximizer:checked + .toggle-expand-btn {
+	position: fixed;
+	transform: rotate(90deg);
+}
+
 .editor-container textarea {
+	--BORDER_VALUES: 1px solid #808080;
 	resize: none;
+
+	border: none;
+	border-bottom: var(--BORDER_VALUES);
+	padding-left: 1em;
+
 	display: block;
 	width: 100%;
+	height: 30vh;
+}
+#maximizer:checked ~ #editor {
+	position: fixed;
+	top: 0; left: 0;
+	height: calc(100vh + 4px);
 }
 
 .preview-container {
-	height: 100vh;
+	max-height: calc(100vh - var(--HEADER_HEIGHT));
 	overflow-y: scroll;
 }
 /* https://github.com/sindresorhus/github-markdown-css#usage */
@@ -45,28 +91,55 @@ img {
 	min-width: 200px;
 	max-width: 980px;
 	margin: 0 auto;
+	padding: 1rem;
+	
+	background-color: transparent;
 }
 
+.markdown-body :is(h1, h2) {
+	border-bottom: 1px solid #808080;
+}
+
+@media screen and (min-width: 360px) {
+	.info {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+	}
+}
 @media screen and (min-width: 640px) {
+	.container {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 0 1rem;
+	}
+
+	header {
+		width: 100%;
+	}
+	header h1 {
+		font-size: 1.25rem;
+	}
+
 	.editor-container {
 		gap: 1rem;
 	}
 	.editor-container textarea {
-		height: calc(100vh - 4px);
-		border: none;
+		height: calc(calc(100vh - 2px) - var(--HEADER_HEIGHT));
+		border-bottom: unset;
+		border-right: var(--BORDER_VALUES);
+
 	}
 	.editor-container .toggle-expand-btn {
 		display: none;
 	}
 
-	.container {
-		flex-direction: row;
-		gap: 1rem;
+	.preview-container {
+		padding-top: 1em;
+		height: calc(100vh - var(--HEADER_HEIGHT))
 	}
-}
 
-@media (max-width: 767px) {
 	.markdown-body {
-		padding: 1rem;
+		padding: 0 1rem;
 	}
 }
