@@ -59,6 +59,7 @@ header h1 {
 	z-index: 999;
 }
 #maximizer:checked + .toggle-expand-btn {
+	position: fixed;
 	transform: rotate(90deg);
 }
 
