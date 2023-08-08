@@ -81,7 +81,7 @@ header h1 {
 }
 
 .preview-container {
-	max-height: 100vh;
+	max-height: calc(100vh - var(--HEADER_HEIGHT));
 	overflow-y: scroll;
 }
 /* https://github.com/sindresorhus/github-markdown-css#usage */
