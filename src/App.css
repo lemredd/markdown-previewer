@@ -64,6 +64,7 @@ header h1 {
 }
 
 .editor-container textarea {
+	--BORDER_VALUES: 1px solid #808080;
 	resize: none;
 	display: block;
 	width: 100%;
