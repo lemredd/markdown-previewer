@@ -3,6 +3,7 @@ export const DEFAULT_CONTENT_VALUE = `
 ## Another required heading
 
 Try editing the editor to see the **magic** happen!
+
 Here are some sample markdown elements you can use:
 
 ### Inline code
