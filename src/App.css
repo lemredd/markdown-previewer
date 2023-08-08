@@ -51,7 +51,7 @@ img {
 }
 
 .preview-container {
-	height: 100vh;
+	max-height: 100vh;
 	overflow-y: scroll;
 }
 /* https://github.com/sindresorhus/github-markdown-css#usage */
