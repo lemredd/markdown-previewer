@@ -42,6 +42,8 @@ img {
 	resize: none;
 	display: block;
 	width: 100%;
+	height: calc(30vh - 4px);
+}
 }
 
 .preview-container {
