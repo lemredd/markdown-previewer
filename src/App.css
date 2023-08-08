@@ -10,6 +10,7 @@ img {
 }
 
 .container {
+	--HEADER_HEIGHT: 64px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
