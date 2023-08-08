@@ -96,6 +96,10 @@ header h1 {
 	background-color: transparent;
 }
 
+.markdown-body :is(h1, h2) {
+	border-bottom: 1px solid #808080;
+}
+
 @media screen and (min-width: 360px) {
 	.info {
 		display: inline-flex;
@@ -136,6 +140,6 @@ header h1 {
 	}
 
 	.markdown-body {
-		padding: 0;
+		padding: 0 1rem;
 	}
 }
