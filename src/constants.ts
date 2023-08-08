@@ -24,7 +24,7 @@ Here are some sample markdown elements you can use:
 ### Image
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 
-Created with 💓 by [Lem Redd](https://www.github.com/lemredd)
+Created by [Lem Redd](https://www.github.com/lemredd)
 `;
 
 
