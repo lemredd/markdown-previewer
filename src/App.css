@@ -45,6 +45,7 @@ img {
 	min-width: 200px;
 	max-width: 980px;
 	margin: 0 auto;
+	padding: 1rem;
 }
 
 @media screen and (min-width: 640px) {
@@ -63,10 +64,8 @@ img {
 		flex-direction: row;
 		gap: 1rem;
 	}
-}
 
-@media (max-width: 767px) {
 	.markdown-body {
-		padding: 1rem;
+		padding: 0;
 	}
 }
