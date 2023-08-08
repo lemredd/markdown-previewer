@@ -18,10 +18,18 @@ function App(): ReactElement {
 	const handle_change = (event: ChangeEvent<HTMLTextAreaElement>): void => set_content(event.target.value);
 
 	return (
-		<div className="container">
-			<Editor content={content} on_change={handle_change} />
-			<Preview content={content} />
-		</div>
+		<>
+			<header>
+				<h1>Markdown Previewer</h1>
+				<section className="info">
+					Made with 💓 +  <img src={reactLogo} height={24} alt="react logo"/>
+				</section>
+			</header>
+			<div className="container">
+				<Editor content={content} on_change={handle_change} />
+				<Preview content={content} />
+			</div>
+		</>
 	);
 }
 
