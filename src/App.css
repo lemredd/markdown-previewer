@@ -25,13 +25,14 @@ img {
 
 .editor-container .toggle-expand-btn {
 	position: absolute;
-	right: 0;
+	right: .5rem;
 	top: .5rem;
 
 	border: none;
 	cursor: pointer;
 
 	transition: transform .15s ease;
+	z-index: 999;
 }
 #maximizer:checked + .toggle-expand-btn {
 	transform: rotate(90deg);
